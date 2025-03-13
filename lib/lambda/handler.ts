@@ -1,7 +1,9 @@
-export async function handler(event: string, context: string) {
-    console.log('Stage Name is: ' + process.env.stage);
+export async function handler(event: any, context: any) {
+    console.log('Stage Name is:', process.env.stage ?? 'Not Set');
+    
     return {
-      body: 'Amine Mastouri exploring CodePipeline',
       statusCode: 200,
+      body: JSON.stringify({ message: 'Amine Mastouri exploring CodePipeline' }),
     };
   }
+  
